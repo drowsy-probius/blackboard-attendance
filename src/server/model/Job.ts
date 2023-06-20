@@ -2,9 +2,6 @@ interface Job {
   /** db idx */
   id: number;
 
-  /** cronjob id */
-  jobId: string;
-
   weekdays: string;
 
   start_time: string;
@@ -27,8 +24,11 @@ interface Job {
 
   campus_nm?: string;
 
+  faculty?: string;
+
   department?: string;
 
+  lastRun?: number;
 }
 
 export default Job;

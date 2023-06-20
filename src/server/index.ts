@@ -3,7 +3,7 @@ import { parse } from "url";
 import next from "next";
 
 import JobScheduler from "./JobScheduler";
-import { scheduler } from './database';
+import { scheduler } from "./database";
 
 const isDev = process.env.NODE_ENV !== "production";
 const hostname = process.env.NEXT_HOST || "0.0.0.0";
@@ -17,7 +17,9 @@ const app = next({
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-  JobScheduler.add("12 */5 * * * *", scheduler);
+  /** run at every even minutes */
+  scheduler(new Date());
+  JobScheduler.add("12 */2 * * * *", scheduler);
 
   createServer(async (req, res) => {
     try {

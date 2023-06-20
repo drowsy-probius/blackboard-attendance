@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server/index.ts",
+    "dev": "nodemon src/server/index.ts",
     "build": "next build",
-    "start": "NODE_ENV=production nodemon server/index.ts",
+    "start": "NODE_ENV=production nodemon src/server/index.ts",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "better-sqlite3": "^8.3.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
+    "formik": "^2.4.2",
     "next": "13.3.4",
     "node-schedule": "^2.1.1",
     "postcss": "8.4.23",

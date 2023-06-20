@@ -1,11 +1,8 @@
 import { Container, Grid } from "@mui/material";
+import FormView from "./FormView";
+import StatusView from "./StatusView";
 
-interface MainViewProps {
-  children: React.ReactNode;
-}
-function MainViewWrapper(props: MainViewProps) {
-  const { children } = props;
-
+function MainView() {
   return (
     <Container
       className="main-container"
@@ -28,7 +25,7 @@ function MainViewWrapper(props: MainViewProps) {
               margin: "40px 0px",
             }}
           >
-            여기에 소개글 입력
+            <StatusView />
           </Container>
         </Grid>
         <Grid item lg={6} width="70%">
@@ -38,7 +35,7 @@ function MainViewWrapper(props: MainViewProps) {
                 margin: "40px 0px",
               }}
             >
-              {children}
+              <FormView />
             </Container>
           </main>
         </Grid>
@@ -47,4 +44,4 @@ function MainViewWrapper(props: MainViewProps) {
   );
 }
 
-export default MainViewWrapper;
+export default MainView;
